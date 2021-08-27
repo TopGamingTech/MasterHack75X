@@ -1,0 +1,114 @@
+<html manifest="offlinexmb.cache">
+<head>
+<title>MASTERHACK EXPLOIT  PS4 2021</title>
+<link rel="stylesheet" href="index.css">
+<body style="color:yellow;font-size:25px;text-align:center;" onload="go();" class="bg">
+<script>
+function DLProgress(e){Percent=(Math.round(e.loaded / e.total * 100));window.msgs.innerHTML="CARGANDO CACHE: " + Percent + "%"};
+function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="CACHE CARGADO EXITOSAMENTE!!!";localStorage.isPrbCached=true;},1000);setTimeout(function(){window.msgs.innerHTML="SALGA DEL NAVEGADOR, DESCONECTE INTERNET Y VUELVA A ENTRAR";},3000);}window.applicationCache.addEventListener("progress",DLProgress,false);window.applicationCache.oncached=function(e){DisplayCacheProgress();};window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
+</script>
+<h1 id=msgs style='font-size:35px;text-align:center;color:yellow'>INICIANDO... POR FAVOR ESPERE</h1>
+<h3 style='font-size:50px;text-align:center;color:blue'>MASTERHACK EXPLOIT HOST PS4 2021</h3>
+<div id=dlog></div>
+<button style=opacity:0 id="input1" onfocus="handle2()"></button>
+<button style=opacity:0 id="input2"></button>
+<button style=opacity:0 id="input3" onfocus="handle2()"></button>
+<select style=opacity:0 id="select1">
+<option value="value1">Value1</option>
+</select>
+<script src="utils.js"></script>
+<script src="int64.js"></script>
+<script src="ps4.js"></script>
+<script>
+function print(){}
+
+var scriptCode = '';
+
+function preloadScripts(lst){
+for(var i=0;i<lst.length;i++){var xhr=new XMLHttpRequest();xhr.open('GET',lst[i],false);xhr.send('');scriptCode+=xhr.responseText+'\n';}
+}
+
+function done(){
+    if(main_ret == 0 || main_ret == 179)
+    {
+        //alert("A Jugar!!!");
+    }
+    else
+        alert("EL HACK HA FALLADO, INTENTE REINICIAR");
+}
+
+window.midExploit = function(){
+preloadScripts(['blob.js'], go);
+}
+
+window.postExploit = function(){
+dlog.remove();
+mymenu.style.display="block";
+    setTimeout(function()
+	{
+	eval.call(window, scriptCode);
+	done();
+	}, 100);
+};
+</script>
+<div id=mymenu style="text-align:center;display:none">
+<div text-align= center>CARGAS EXITOSAS = <span id=passCounter></span>&nbsp;&nbsp;:&nbsp;&nbsp;CARGAS FALLIDAS = <span id=failCounter></span></div>
+<div style="font-size:30px;color:yellow"></div>
+</br>
+<button onMouseOver="msgs.innerHTML='GOLD HEN V1.1'"; onmouseout="msgs.innerHTML='CARGANDO" onclick="load_goldhenb(); return false"><img src="hen.png"></button>
+<button onMouseOver="msgs.innerHTML='ORBIS TOOL BOX'"; onmouseout="msgs.innerHTML='CARGANDO" onclick="load_orbistoolbox(); return false"><img src="OrbisToolbox.png"></button>
+<button onMouseOver="msgs.innerHTML='BIN LOADER'"; onmouseout="msgs.innerHTML='CARGANDO" onclick="load_binloader(); return false"><img src="binloader.png"></button>
+<button onMouseOver="msgs.innerHTML='DUMPEA TUS JUEGOS'"; onmouseout="msgs.innerHTML='CARGANDO" onclick="load_dumper(); return false"><img src="dumper.png"></button>
+</br>
+<div style="font-size:35px;color:yellow">PARA SALIR PRESIONE EL BOTON PS DE SU MANDO.</div>
+<br>
+<br>
+</div>
+</div>
+<script>
+UA = navigator.userAgent.substring(navigator.userAgent.indexOf("0.00 (") + 28, navigator.userAgent.indexOf(") Apple"));
+if (UA == "7.55"){PS4fw.innerHTML=""+UA+" detectada"};if(UA != "7.55"){PS4fw.innerHTML="Spoofed a la v"+UA};
+function getScript(source,callback){var gs=document.createElement('script');gs.src=source;gs.onload=callback;gs.async=false;document.body.appendChild(gs);}
+function loadScript2(){getScript("exp_loaderPL.js",function(){});}
+</script>
+<script>
+if (localStorage.passcount == null) localStorage.passcount=0;
+window.passCounter.innerHTML=localStorage.passcount;
+if (localStorage.failcount == null) localStorage.failcount=0;
+window.failCounter.innerHTML=localStorage.failcount;
+
+
+
+function load_goldhenb(){
+msgs.innerHTML="<h1 style='font-size:40px;text-align:center;'>LANZANDO GOLD HEN 1.1...</h1>";
+LoadedMSG="GoldHen V1.1 CARGADO CON EXITO";
+function getScript(source,callback){var gs=document.createElement('script');gs.src=source;gs.onload=callback;gs.async=false;document.body.appendChild(gs);}
+function loadScript(){getScript("exp_jailbreak1.js",function(){setTimeout(jailbreak,000);});}loadScript();
+PLfile = "pl_goldhen_1.1.bin"
+loadScript2();
+}
+
+function load_orbistoolbox(){
+msgs.innerHTML="<h1 style='font-size:40px;text-align:center;'>LANZANDO ORBIS TOOL BOX ...";
+LoadedMSG="OrbisToolBox CARGADO CON EXITO";
+PLfile = "pl_OrbisToolbox.bin";
+loadScript2();
+}
+
+function load_binloader(){
+msgs.innerHTML="<h1 style='font-size:40px;text-align:center;'>LANZANDO BIN LOADER...";
+LoadedMSG="Envía Payloads al puerto 9021";
+function loadScript(){getScript("exp_loaderBL.js",function(){});}
+loadScript();
+}
+
+function load_dumper(){
+msgs.innerHTML="<h1 style='font-size:40px;text-align:center;'>LANZANDO DUMPER...</h1>";
+LoadedMSG="Dumper CARGADO CON EXITO";
+PLfile = "pl_dumper.bin";
+loadScript2();
+}
+
+</script>
+</body>
+</html>
